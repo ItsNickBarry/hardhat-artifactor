@@ -17,4 +17,13 @@ extendEnvironment(function (hre) {
       bytecode,
     });
   };
+
+  hre.overwriteArtifact = async function (contractName, bytecode) {
+    const artifact = await hre.artifacts.readArtifact(contractName);
+
+    await hre.artifacts.saveArtifactAndDebugFile({
+      ...artifact,
+      bytecode,
+    });
+  };
 });
