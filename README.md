@@ -13,7 +13,7 @@ yarn add --dev hardhat-artifactor
 Load plugin in Hardhat config:
 
 ```javascript
-require("hardhat-artifactor");
+require('hardhat-artifactor');
 ```
 
 Call the `createArtifactFromTemplate` function available in the Hardhat Runtime Environment to create an artifact with an ABI matching an existing artifact but with custom bytecode:
