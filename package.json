@@ -1,0 +1,28 @@
+{
+  "name": "hardhat-artifactor",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Dynamically generate deployable Hardhat artifacts",
+  "keywords": [
+    "hardhat",
+    "buidler",
+    "solidity",
+    "solc",
+    "artifacts",
+    "compilation",
+    "smart-contracts",
+    "ethereum",
+    "blockchain",
+    "wow"
+  ],
+  "repository": "https://github.com/ItsNickBarry/hardhat-artifactor",
+  "author": "Nick Barry",
+  "main": "index.js",
+  "peerDependencies": {
+    "hardhat": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "hardhat": "^2.0.0"
+  }
+}
