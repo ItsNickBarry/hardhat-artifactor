@@ -5,6 +5,8 @@ Dynamically generate deployable Hardhat contract artifacts.
 ## Installation
 
 ```bash
+npm install --save-dev hardhat-artifactor
+# or
 yarn add --dev hardhat-artifactor
 ```
 
