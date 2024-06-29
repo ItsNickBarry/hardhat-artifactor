@@ -1,9 +1,9 @@
 import { name as pluginName } from '../package.json';
 import { extendEnvironment } from 'hardhat/config';
-import 'hardhat/types/runtime';
+import 'hardhat/types/artifacts';
 
-declare module 'hardhat/types/runtime' {
-  export interface HardhatRuntimeEnvironment {
+declare module 'hardhat/types/artifacts' {
+  export interface Artifacts {
     createArtifactFromTemplate: (
       templateContract: string,
       generatedContract: string,
@@ -17,11 +17,11 @@ declare module 'hardhat/types/runtime' {
 }
 
 extendEnvironment((hre) => {
-  hre.createArtifactFromTemplate = async function (
+  hre.artifacts.createArtifactFromTemplate = async (
     templateContract: string,
     generatedContract: string,
     bytecode: string,
-  ) {
+  ) => {
     const primaryArtifact = await hre.artifacts.readArtifact(templateContract);
 
     await hre.artifacts.saveArtifactAndDebugFile({
@@ -32,7 +32,10 @@ extendEnvironment((hre) => {
     });
   };
 
-  hre.overwriteArtifact = async (contractName: string, bytecode: string) => {
+  hre.artifacts.overwriteArtifact = async (
+    contractName: string,
+    bytecode: string,
+  ) => {
     const artifact = await hre.artifacts.readArtifact(contractName);
 
     await hre.artifacts.saveArtifactAndDebugFile({

@@ -20,10 +20,10 @@ require('hardhat-artifactor');
 
 ### Create Artifact from Template
 
-Call the `createArtifactFromTemplate` function available in the Hardhat Runtime Environment to create an artifact with an ABI matching an existing artifact but with custom bytecode:
+Call the `createArtifactFromTemplate` function available in the `artifacts` namespace of the Hardhat Runtime Environment to create an artifact with an ABI matching an existing artifact but with custom bytecode:
 
 ```javascript
-await createArtifactFromTemplate(
+await hre.artifacts.createArtifactFromTemplate(
   'TemplateContract',
   'GeneratedContract',
   bytecode,
@@ -35,7 +35,7 @@ await createArtifactFromTemplate(
 Call the `overwriteArtifact` function available in the Hardhat Runtime Environment to replace the bytecode of an existing artifact with custom bytecode:
 
 ```javascript
-await overwriteArtifact('Contract', bytecode);
+await hre.artifacts.overwriteArtifact('Contract', bytecode);
 ```
 
 ## Development
