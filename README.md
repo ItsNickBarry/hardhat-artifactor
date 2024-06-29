@@ -23,7 +23,11 @@ require('hardhat-artifactor');
 Call the `createArtifactFromTemplate` function available in the Hardhat Runtime Environment to create an artifact with an ABI matching an existing artifact but with custom bytecode:
 
 ```javascript
-await createArtifactFromTemplate('TemplateContract', 'GeneratedContract', bytecode);
+await createArtifactFromTemplate(
+  'TemplateContract',
+  'GeneratedContract',
+  bytecode,
+);
 ```
 
 ### Overwrite Artifact
@@ -32,4 +36,18 @@ Call the `overwriteArtifact` function available in the Hardhat Runtime Environme
 
 ```javascript
 await overwriteArtifact('Contract', bytecode);
+```
+
+## Development
+
+Install dependencies via Yarn:
+
+```bash
+yarn install
+```
+
+Setup Husky to format code on commit:
+
+```bash
+yarn prepare
 ```

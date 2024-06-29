@@ -6,7 +6,7 @@ extendEnvironment(function (hre) {
   hre.createArtifactFromTemplate = async function (
     templateContract,
     generatedContract,
-    bytecode
+    bytecode,
   ) {
     const primaryArtifact = await hre.artifacts.readArtifact(templateContract);
 
